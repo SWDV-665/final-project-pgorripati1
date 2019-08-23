@@ -1,0 +1,30 @@
+<ion-header no-border>
+    <ion-navbar>
+        <ion-title>Photo Stories</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form (ngSubmit)="createStory()" #regForm="ngForm">
+        <ion-list>
+            <ion-item>
+                <ion-label fixed>Create Story</ion-label>
+                <ion-avatar item-end>
+                    <img src="{{imgPreview}}" (click)="getPhoto()">
+                </ion-avatar>
+            </ion-item>
+            <ion-item>
+                <ion-label>Title</ion-label>
+                <ion-input type="text" [(ngModel)]="photoStory.header" name="header" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Story</ion-label>
+                <!--<ion-input type="text" [(ngModel)]="photoStory.story" name="story" required></ion-input>-->
+                <ion-textarea [(ngModel)]="photoStory.story" name="story" required></ion-textarea>
+            </ion-item>
+        </ion-list>
+        <div padding>
+            <button ion-button full [disabled]="photoStory.invalid">Create</button>
+        </div>
+    </form>
+</ion-content>

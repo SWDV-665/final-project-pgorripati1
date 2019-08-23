@@ -1,0 +1,19 @@
+
+
+# Create item
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"header":"Bread","story":"it is a story"}' \
+  http://localhost:8080/api/photostories
+
+# Update item
+curl --header "Content-Type: application/json" \
+  --request PUT \
+  --data '{"header":"Bread","story":"Short oone"}' \
+  http://localhost:8080/api/photostories/{id}  
+
+
+ # Delete item
+curl --header "Content-Type: application/json" \
+  --request DELETE \
+  http://localhost:8080/api/photostories/{id}   
